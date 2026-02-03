@@ -1,0 +1,121 @@
+body {
+    font-family: 'Segoe UI', sans-serif; /* Se define la feunte  */
+    margin: 0; /* Elimina los espacios en blanco de la  pagina*/
+    background-color: #f6d3d3; /*color del background (es color rojo flojo ya que me recuerda a japon ese color)*/
+}
+
+header {
+    background-color: #dc5454; /* Color del encabezado*/
+    color: white; /*color del texto */
+    text-align: center; /* centrar el titulo*/
+    padding: 30px;  
+}
+
+
+.principal {
+    display: flex; /*Hace que se pongan al lado una columna de la otra*/
+    flex-wrap: wrap; /* Para que en el móvil se pongan una debajo de la otra */
+    gap: 20px; /*Espacio en tre columnas*/
+    padding: 20px; /*Separacion con los bordes de las pantallas*/
+}
+
+.lado_izq { 
+    flex: 1; /* crece y se encoge en proprocion 1*/
+    min-width: 200px; /*tamaño minimo antes de que se mueva*/
+    background: white; /*color del fondo*/
+    padding: 15px; 
+    border-radius: 8px; 
+}
+.centro { 
+    flex: 3; /*proporción 3 */
+    min-width: 350px; 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px;
+}
+.lado_derch { 
+    flex: 1.2; /*proporción 1.2 */
+    min-width: 250px; 
+    background: white; 
+    padding: 15px; 
+    border-radius: 8px; 
+}
+.lado_derch a {
+     text-decoration: none; /*quita el color de los enlaces */
+     color: #dc5454; /* color de los enlaces color rojo*/ 
+     font-weight: bold; /*negrita la letra */
+}
+
+
+.lado_izq ul { /*apartado ul*/
+    list-style: none; /* Se quitan los puntos de la lista debido a que se quita la estetica  */
+    padding: 0; 
+}
+.lado_izq li a { /*apartado li a */
+    text-decoration: none; 
+    color: #dc5454; 
+    font-weight: bold; 
+    display: block; /*ocupa el 100%espacio en bloque*/
+    padding: 10px 0; 
+     
+}
+
+
+.rejilla {
+    display: grid; /* modo reejilla */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 15px; /*espacio entre fotos*/
+}
+
+
+.rejilla img { /*imagenes de la rejilla*/
+    width: 100%;       /* Ocupa todo el ancho de la caja */
+    height: 180px;     /* Altura para que todas sean iguales */
+    object-fit: cover; /* Recorta la imagen para que no se estire */
+    border-radius: 10px;
+}
+
+/* FICHAS DE LUGARES */
+
+.cajas { 
+    border: 1px solid #ddd; 
+    padding: 15px; 
+    margin-bottom: 20px; 
+    border-radius: 8px; 
+    background: #fafafa;
+ }
+
+/* ANCHO DE IMAGEN EN LAS FICHAS */
+.cajas img {
+    width: 100%;       /* Se adapta al ancho de la ficha */
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* COLUMNA DE NOTICIAS */
+.noticia { 
+    margin-bottom: 20px; 
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 10px; 
+}
+.noticia img { 
+    width: 100%; 
+    height: 100px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+}
+.noticia h4 { 
+    color: #dc5454; 
+    margin: 10px 0 5px 0; }
+
+.d-block w-100 {
+    width: 30%;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .main-content { flex-direction: column; }
+    .grid-galeria { grid-template-columns: repeat(2, 1fr); } /* En móviles pasa a 2 columnas */
+}
