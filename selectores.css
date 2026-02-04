@@ -27,6 +27,7 @@ header {
     flex-wrap: wrap; /* Para que en el móvil se pongan una debajo de la otra */
     gap: 20px; /*Espacio en tre columnas*/
     padding: 20px; /*Separacion con los bordes de las pantallas*/
+
 }
 
 .lado_izq { 
@@ -96,7 +97,6 @@ header {
     background: #fafafa;
  }
 
-
 .cajas img { /*imagenes de las cajas*/
     width: 100%;       /* Se adapta al ancho de la ficha */
     height: auto;
@@ -108,16 +108,13 @@ header {
     grid-template-columns: repeat(2, 1fr); /* Crea las 2 columnas */
     gap: 20px; /* Espacio entre las cajas */
     margin-top: 20px;
-    
 }
-
 
 .conten .cajas {
     margin-bottom: 0; 
     display: flex;
     flex-direction: column;
-    
-
+    height: 100%; /*altura*/
 }
 
 .noticia { /* notiicas*/
@@ -126,7 +123,7 @@ header {
     padding-bottom: 10px; 
 }
 .noticia img { /*noticias img*/
-    width: 100%; 
+    width: 100%; /*altura igual para todos los bloques*/
     height: 100px; 
     object-fit: cover;  
 }
@@ -144,37 +141,28 @@ header {
     text-align: center; /*texto en el centro*/
     background-color: #000000; /* El mismo rojo de tu header */
     color: rgb(255, 255, 255);
-    text-align: center;
     padding: 20px;
-    margin-top: 30px;
     font-family:'Courier New', Courier, monospace
 }
 
-
-@media (max-width: 400px) {/*movil*/
-    .principal { 
-        display: flex;
-        flex-direction: column; 
-    }
+@media (max-width: 800px) { /*ipad*/
+    .lado_izq, .lado_derch, .centro   {
+         flex: 100%;  /*se apilan las columnas una debajo de la otra*/
+    }     
     .rejilla { 
-      grid-template-columns:1fr; 
-    }
-    .conten{
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 780px) {/*ipad*/
-    .principal {
-    display: flex; /*Hace que se pongan al lado una columna de la otra*/
-    flex-direction: column; 
-}
-    .rejilla { 
-    grid-template-columns: repeat(2, 1fr);  /*la rejilla se ponga en los parametor qu ele indiquemos*/
-    padding: 10px;
+        grid-template-columns: repeat(2, 1fr);  /*la galeria de imagenes pasa a ser 2 columnas*/
     } 
-    .conten{
-        grid-template-columns: 1fr; /*para que la class conetnt se ponga en grid*/
+}
+@media (max-width: 480px) {
+    .rejilla { 
+        grid-template-columns: 1fr; /* la galería pasa a 1 columna */
+    } 
+    .conten { 
+        grid-template-columns: 1fr; /* el turismo a una columna */
+    } 
+    .flotante { 
+        font-size: 12px; top: 10px; padding: 5px; /*ajuste del flotante debido a que quedaba muy grande*/
     }
-    
+
+
 }
