@@ -13,8 +13,8 @@ header {
 
 .flotante {
     position: fixed; /*La posicion sea fija*/
-    top: 86px; /*altura en la que se mostrara para que noquede por debajo del bootstrap*/
-    right: 10px; 
+    top: 0px; /*altura en la que se mostrara para que noquede por debajo del bootstrap*/
+    right: 0px; 
     background: rgb(253, 80, 80); 
     color: rgb(255, 255, 255);
     padding: 7px 9px; /*separaciones */
