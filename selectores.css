@@ -11,7 +11,17 @@ header {
     padding: 30px;  
 }
 
+.flotante {
+    position: fixed; /*La posicion sea fija*/
+    top: 86px; /*altura en la que se mostrara para que noquede por debajo del bootstrap*/
+    right: 10px; 
+    background: rgb(253, 80, 80); 
+    color: rgb(255, 255, 255);
+    padding: 7px 9px; /*separaciones */
+    border: rgb(255, 255, 255) 2px solid; /*color del borde*/
+    text-decoration: none; /*se quite el enlace*/
 
+}
 .principal {
     display: flex; /*Hace que se pongan al lado una columna de la otra*/
     flex-wrap: wrap; /* Para que en el móvil se pongan una debajo de la otra */
@@ -24,25 +34,25 @@ header {
     min-width: 200px; /*tamaño minimo antes de que se mueva*/
     background: white; /*color del fondo*/
     padding: 15px; 
-    border-radius: 8px; 
+  
 }
 .centro { 
     flex: 3; /*proporción 3 */
-    min-width: 350px; 
+    min-width: 200px; /*tamaño minimo antes de que se mueva*/
     background: white; 
     padding: 20px; 
-    border-radius: 8px;
+   
 }
 .lado_derch { 
     flex: 1.2; /*proporción 1.2 */
-    min-width: 250px; 
+    min-width: 200px; /*tamaño minimo antes de que se mueva*/
     background: white; 
     padding: 15px; 
-    border-radius: 8px; 
+ 
 }
-.lado_derch a {
-     text-decoration: none; /*quita el color de los enlaces */
-     color: #dc5454; /* color de los enlaces color rojo*/ 
+.lado_derch a { /*apartado derecho a */
+     text-decoration: none; /*quita la linea del enlace */
+     color: #dc5454; /* color de la letra rojo*/ 
      font-weight: bold; /*negrita la letra */
 }
 
@@ -55,7 +65,7 @@ header {
     text-decoration: none; 
     color: #dc5454; 
     font-weight: bold; 
-    display: block; /*ocupa el 100%espacio en bloque*/
+    display: block; /*ocupa el 100% espacio en bloque*/
     padding: 10px 0; 
      
 }
@@ -72,12 +82,13 @@ header {
     width: 100%;       /* Ocupa todo el ancho de la caja */
     height: 180px;     /* Altura para que todas sean iguales */
     object-fit: cover; /* Recorta la imagen para que no se estire */
-    border-radius: 10px;
+    border-radius: 60px;
 }
 
-/* FICHAS DE LUGARES */
 
-.cajas { 
+
+.cajas {  /*cajas de las noticias*/
+    
     border: 1px solid #ddd; 
     padding: 15px; 
     margin-bottom: 20px; 
@@ -85,16 +96,15 @@ header {
     background: #fafafa;
  }
 
-/* ANCHO DE IMAGEN EN LAS FICHAS */
-.cajas img {
+
+.cajas img { /*imagenes del*/
     width: 100%;       /* Se adapta al ancho de la ficha */
     height: auto;
-    border-radius: 5px;
+    border-radius: 30px;
     margin: 10px 0;
 }
 
-/* COLUMNA DE NOTICIAS */
-.noticia { 
+.noticia { /* notiicas*/
     margin-bottom: 20px; 
     border-bottom: 1px solid #eee; 
     padding-bottom: 10px; 
@@ -102,20 +112,69 @@ header {
 .noticia img { 
     width: 100%; 
     height: 100px; 
-    object-fit: cover; 
-    border-radius: 5px; 
+    object-fit: cover;  
 }
+.noticia p { /* notiicas*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .noticia h4 { 
     color: #dc5454; 
     margin: 10px 0 5px 0; }
 
-.d-block w-100 {
-    width: 30%;
+.footer {
+    text-align: center; /*texto en el centro*/
+    background-color: #000000; /* El mismo rojo de tu header */
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-family:'Courier New', Courier, monospace
+}
+
+.conten{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea las 2 columnas */
+    gap: 20px; /* Espacio entre las cajas */
+    margin-top: 20px;
+    
 }
 
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .main-content { flex-direction: column; }
-    .grid-galeria { grid-template-columns: repeat(2, 1fr); } /* En móviles pasa a 2 columnas */
+.conten .cajas {
+    margin-bottom: 0; 
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+@media (max-width: 400px) {/*movil*/
+    .principal { 
+        display: flex;
+        flex-direction: column; 
+    }
+    .rejilla { 
+      grid-template-columns:1fr; 
+    }
+    .conten{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 780px) {/*ipad*/
+    .principal {
+    display: flex; /*Hace que se pongan al lado una columna de la otra*/
+    flex-direction: column; 
+}
+    .rejilla { 
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 10px;
+    } 
+    .conten{
+        grid-template-columns: 1fr;
+    }
+    
 }
